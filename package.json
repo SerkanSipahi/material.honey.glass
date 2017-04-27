@@ -1,0 +1,32 @@
+{
+  "name": "material.honey.glass",
+  "version": "0.0.1",
+  "description": "Collection of components for honey.glass built with app-decorators according material.google.io",
+  "main": "index.js",
+  "bin": {
+    "postcss": "node_modules/.bin/postcss"
+  },
+  "scripts": {
+    "compile": "postcss ./css/styles.css --config postcss.config.js --output ./assets/css/styles.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SerkanSipahi/material.honey.glass.git"
+  },
+  "keywords": [
+    "components",
+    "google.material"
+  ],
+  "author": "Serkan Sipahi <serkan.sipahi@yahoo.de>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SerkanSipahi/material.honey.glass/issues"
+  },
+  "homepage": "https://github.com/SerkanSipahi/material.honey.glass#readme",
+  "devDependencies": {
+    "autoprefixer": "6.7.7",
+    "postcss": "5.2.17",
+    "postcss-cli": "3.2.0",
+    "postcss-nested": "1.0.1"
+  }
+}
