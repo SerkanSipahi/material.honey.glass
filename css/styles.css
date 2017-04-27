@@ -1,0 +1,50 @@
+/**
+ * https://storage.googleapis.com/material-design/publish/material_v_11/assets/0Bzhp5Z4wHba3bEwtTE1STENUMzA/stickersheet_components_20170314.psd
+ */
+:root {
+    --height-8px:   8px;
+    --height-16px: 16px;
+    --height-24px: 24px;
+    --height-48px: 48px;
+    --height-56px: 56px;
+    --height-64px: 64px;
+    --height-72px: 72px;
+    --height-80px: 80px;
+    --height-88px: 88px;
+
+    --color-8px:  #ff4081;
+    --color-16px: #9effff;
+    --color-24px: #10b2b2;
+    --color-48px: #0488d2;
+    --color-56px: #3e4fb1;
+    --color-64px: #ffeb3b;
+    --color-72px: #4f2ca5;
+    --color-80px: #34ac71;
+    --color-88px: #00796c;
+}
+
+com-bar {
+
+    display: flex;
+
+    h1 {
+        order: 1
+    }
+    com-icon[name="burger"]{
+        order: 0
+    }
+    com-icon[name="search"]{
+        order: 0
+    }
+    com-icon[name="like"]{
+        order: 0
+    }
+    com-icon[name="settings"]{
+        order: 0
+    }
+
+    com-icon, h1 {
+        flex-shrink:1;
+        flex-grow:1;
+    }
+}
