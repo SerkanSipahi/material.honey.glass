@@ -87,8 +87,8 @@ com-statusheader{
 /** Components **/
 
 com-statusheader {
-    height: var(--height-16px);
-    background-color: var(--color-16px);
+    height: var(--height-24px);
+    background-color: var(--color-24px);
 }
 
 com-header {
