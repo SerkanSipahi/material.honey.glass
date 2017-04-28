@@ -7,7 +7,8 @@
     "postcss": "node_modules/.bin/postcss"
   },
   "scripts": {
-    "compile": "postcss ./css/*.css --config config.js --dir ./assets --watch"
+    "set-normalizecss": "rm -rf ./css/normalize.css && ln -s ../node_modules/normalize.css/normalize.css ./css/normalize.css",
+    "compile": "npm run set-normalizecss && rm -rf assets && postcss ./css/*.css --config postcss.config.js --dir ./assets --watch"
   },
   "repository": {
     "type": "git",
@@ -25,8 +26,12 @@
   "homepage": "https://github.com/SerkanSipahi/material.honey.glass#readme",
   "devDependencies": {
     "autoprefixer": "6.7.7",
+    "cssnano": "3.10.0",
     "postcss": "5.2.17",
     "postcss-cli": "3.2.0",
     "postcss-nested": "1.0.1"
+  },
+  "dependencies": {
+    "normalize.css": "6.0.0"
   }
 }
