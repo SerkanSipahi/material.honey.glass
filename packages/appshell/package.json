@@ -1,0 +1,36 @@
+{
+  "name": "appshell.material.honey.glass",
+  "version": "0.0.1",
+  "description": "Application shell",
+  "main": "index.js",
+  "bin": {
+    "postcss": "node_modules/.bin/postcss"
+  },
+  "scripts": {
+    "postcss-config": "rm -rf postcss.config.js && ln -s ../../postcss.config.js postcss.config.js",
+    "normalizecss": "rm -rf ./css/normalize.css && cd css && ln -s ../node_modules/normalize.css/normalize.css normalize.css",
+    "compile": "npm run postcss-config && npm run normalizecss && rm -rf assets && postcss ./css/*.css --config postcss.config.js --dir ./assets --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SerkanSipahi/material.honey.glass/tree/master/packages/appshell"
+  },
+  "keywords": [
+    "components",
+    "google.material"
+  ],
+  "author": "Serkan Sipahi <serkan.sipahi@yahoo.de>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SerkanSipahi/material.honey.glass/issues"
+  },
+  "homepage": "https://github.com/SerkanSipahi/material.honey.glass#readme",
+  "devDependencies": {
+    "autoprefixer": "6.7.7",
+    "cssnano": "3.10.0",
+    "normalize.css": "6.0.0",
+    "postcss": "5.2.17",
+    "postcss-cli": "3.2.0",
+    "postcss-nested": "1.0.1"
+  }
+}

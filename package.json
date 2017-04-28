@@ -2,17 +2,17 @@
   "name": "material.honey.glass",
   "version": "0.0.1",
   "description": "Collection of components for honey.glass built with app-decorators according material.google.io",
-  "main": "index.js",
-  "bin": {
-    "postcss": "node_modules/.bin/postcss"
-  },
-  "scripts": {
-    "set-normalizecss": "rm -rf ./css/normalize.css && ln -s ../node_modules/normalize.css/normalize.css ./css/normalize.css",
-    "compile": "npm run set-normalizecss && rm -rf assets && postcss ./css/*.css --config postcss.config.js --dir ./assets --watch"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SerkanSipahi/material.honey.glass.git"
+  },
+  "bin": {
+    "lerna": "node_modules/.bin/lerna"
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "clean": "command -v lerna >/dev/null && lerna clean --yes",
+    "test": "echo 'no tests'"
   },
   "keywords": [
     "components",
@@ -25,13 +25,6 @@
   },
   "homepage": "https://github.com/SerkanSipahi/material.honey.glass#readme",
   "devDependencies": {
-    "autoprefixer": "6.7.7",
-    "cssnano": "3.10.0",
-    "postcss": "5.2.17",
-    "postcss-cli": "3.2.0",
-    "postcss-nested": "1.0.1"
-  },
-  "dependencies": {
-    "normalize.css": "6.0.0"
+    "lerna": "2.0.0-rc.4"
   }
 }
