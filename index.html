@@ -6,23 +6,43 @@
     </head>
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
     <body>
-        <com-bar>
+        <com-header>
             <h1>Title</h1>
             <com-icon name="burger">|||</com-icon>
             <com-icon name="search">0</com-icon>
             <com-icon name="like">L</com-icon>
             <com-icon name="settings">:</com-icon>
-        </com-bar>
+        </com-header>
 
         <com-subheader>
             Subheader
         </com-subheader>
 
-        <!-- https://material.io/guidelines/components/subheaders.html# -->
+        <!--
+        https://material.io/guidelines/components/subheaders.html#subheaders-list-subheaders
+        -->
         <com-list>
-            <com-listitem icon="a">Text</com-listitem>
-            <com-listitem icon="b">Text</com-listitem>
-            <com-listitem icon="c">Text</com-listitem>
+            <com-listitem icon="a" type="small">Text</com-listitem>
+            <com-listitem icon="b" type="small">Text</com-listitem>
+            <com-listitem icon="c" type="small">Text</com-listitem>
+        </com-list>
+
+        <!--
+        https://material.io/guidelines/components/subheaders.html#subheaders-menu-subheaders
+        -->
+        <com-list>
+            <com-listitem icon="a" type="big">Text</com-listitem>
+            <com-listitem icon="b" type="big">Text</com-listitem>
+            <com-listitem icon="c" type="big">Text</com-listitem>
+        </com-list>
+
+        <!--
+        https://material.io/guidelines/components/subheaders.html#subheaders-grid-subheaders
+        -->
+        <com-list>
+            <com-listitem src="./a/b.png" type="grid">Text</com-listitem>
+            <com-listitem src="./a/b.png" type="grid">Text</com-listitem>
+            <com-listitem src="./a/b.png" type="grid">Text</com-listitem>
         </com-list>
 
     </body>

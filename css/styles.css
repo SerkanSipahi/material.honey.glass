@@ -2,6 +2,7 @@
  * https://storage.googleapis.com/material-design/publish/material_v_11/assets/0Bzhp5Z4wHba3bEwtTE1STENUMzA/stickersheet_components_20170314.psd
  */
 :root {
+
     --height-8px:   8px;
     --height-16px: 16px;
     --height-24px: 24px;
@@ -21,6 +22,7 @@
     --color-72px: #4f2ca5;
     --color-80px: #34ac71;
     --color-88px: #00796c;
+
 }
 
 com-bar {
@@ -42,7 +44,6 @@ com-bar {
     com-icon[name="settings"]{
         order: 0
     }
-
     com-icon, h1 {
         flex-shrink:1;
         flex-grow:1;
