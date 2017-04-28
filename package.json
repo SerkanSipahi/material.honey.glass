@@ -7,7 +7,7 @@
     "postcss": "node_modules/.bin/postcss"
   },
   "scripts": {
-    "compile": "postcss ./css/*.css --config postcss.config.js --dir ./assets --watch"
+    "compile": "postcss ./css/*.css --config config.js --dir ./assets --watch"
   },
   "repository": {
     "type": "git",
