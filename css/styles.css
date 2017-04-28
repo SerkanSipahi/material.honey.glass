@@ -7,7 +7,6 @@
  */
 
 :root {
-
     --height-8px:   8px;
     --height-16px: 16px;
     --height-24px: 24px;
@@ -30,22 +29,34 @@
 
     --key-lines :  16px;
     --fixed-width: 56px;
-
 }
 
+/** Reset **/
 body {
     margin: 0;
     padding: 0;
 }
 
-com-header {
+/** Keylines **/
+com-header, com-subheader {
+    padding: 0 var(--key-lines);
+}
 
+/** Display **/
+com-header, com-subheader {
+    display: flex;
+    align-items: center;
+}
+
+/** Components **/
+com-header {
     height: var(--height-56px);
     background-color: var(--color-56px);
+    font-size: 16px;
 
-    display: flex;
-    padding: 0 var(--key-lines);
+    h1 { width: 35vw }
 
+    /** Order **/
     h1 { order: 1 }
     com-icon[name="burger"  ]{ order: 0 }
     com-icon[name="search"  ]{ order: 2 }
@@ -53,17 +64,25 @@ com-header {
     com-icon[name="settings"]{ order: 4 }
 
     com-icon, h1 {
-        align-self: center;
         flex-shrink:1;
         flex-grow:1;
+    }
+
+    /** Dimension burger **/
+    com-icon[name="burger"  ]{
+        flex-basis: var(--fixed-width);
+        flex-shrink:0;
+        flex-grow:0;
+    }
+
+    com-icon[name="search"],
+    com-icon[name="like"],
+    com-icon[name="settings"]{
+        text-align: right;
     }
 }
 
 com-subheader {
-
-    display: block;
-
     height: var(--height-48px);
     background-color: var(--color-48px);
-
 }
