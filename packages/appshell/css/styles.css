@@ -1,5 +1,15 @@
 /**
+ * Resources:
  * https://material.io/guidelines/material-design/elevation-shadows.html#elevation-shadows-elevation-android
+ * - dimensions for mobile/tablet/desktip
+ * https://getmdl.io/index.html
+ * - components
+ * https://material.io/guidelines/style/typography.html#typography-other-typographic-guidelines
+ * - font sizes, lineheight, Colors & contrast for title, headline, subheading, button, etc
+ * - generator => https://google-webfonts-helper.herokuapp.com/fonts/roboto?subsets=latin
+ * - https://www.maketecheasier.com/use-google-roboto-font-everywhere/
+ * - http://stackoverflow.com/questions/23915849/how-to-use-roboto-light-thin-from-google-fonts-in-chrome
+ * - http://tobiasahlin.com/typesource/08-fall-collection/
  */
 
 /**
@@ -67,7 +77,7 @@ body {
 com-header,
 com-subheader,
 com-list {
-    font-family: Arial;
+    font-family: Roboto;
 }
 
 /** Keylines **/
