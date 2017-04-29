@@ -39,6 +39,9 @@
 
     --key-lines :  16px;
     --fixed-width: 56px;
+
+    --global-color: #172351;
+    --global-fontsize: 16px;
 }
 
 /**
@@ -68,9 +71,11 @@
 }
 
 /** Reset **/
-body {
+html {
     margin: 0;
     padding: 0;
+    color: var(--global-color);
+    font-size: var(--global-fontsize);
 }
 
 /** Font Family **/
@@ -88,23 +93,31 @@ com-subheader {
 
 /** Display **/
 com-header,
-com-subheader,
-com-statusheader{
+com-subheader{
     display: flex;
     align-items: center;
 }
 
 /** Components **/
 
-com-statusheader {
-    height: var(--height-24px);
-    background-color: var(--color-24px);
-}
-
 com-header {
     height: var(--height-56px);
     background-color: var(--color-56px);
-    font-size: 16px;
+}
+
+com-subheader {
+    height: var(--height-48px);
+    background-color: var(--color-48px);
+}
+
+com-icon {}
+com-list {}
+
+com-listitem{}
+
+/** Compositions (components) **/
+
+com-header {
 
     h1 { width: 35vw }
 
@@ -113,12 +126,11 @@ com-header {
     com-icon[name="menu"]{ order: 0 }
     com-icon[name="search"]{ order: 2 }
     com-icon[name="favorite"]{ order: 3 }
-    com-icon[name="shopping-cart"]{ order: 4 }
+    com-icon[name="shopping_cart"]{ order: 4 }
 
     com-icon, h1 {
         flex-shrink:1;
         flex-grow:1;
-        color: white;
     }
 
     /** Dimension burger **/
@@ -130,16 +142,7 @@ com-header {
 
     com-icon[name="search"],
     com-icon[name="favorite"],
-    com-icon[name="shopping-cart"]{
+    com-icon[name="shopping_cart"]{
         text-align: right;
     }
 }
-
-com-subheader {
-    height: var(--height-48px);
-    background-color: var(--color-48px);
-}
-
-com-icon {}
-com-list {}
-com-listitem{}

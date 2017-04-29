@@ -15,51 +15,44 @@
         <link rel="stylesheet" type="text/css" href="./assets/styles.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-
-
-
     </head>
     <body>
-        <com-statusheader>
-
-        </com-statusheader>
         <com-header>
             <h1>Title</h1>
             <com-icon name="menu"><i class="icons">menu</i></com-icon>
             <com-icon name="search"><i class="icons">search</i></com-icon>
-            <com-icon name="favorite"><i class="icons">favorite</i></com-icon>
-            <com-icon name="shopping-cart"><i class="icons">shopping_cart</i></com-icon>
+            <com-icon name="shopping_cart"><i class="icons">shopping_cart</i></com-icon>
         </com-header>
 
+        <!--
+        https://material.io/guidelines/components/subheaders.html
+        -->
         <com-subheader>
             Subheader
         </com-subheader>
 
         <!--
-        https://material.io/guidelines/components/subheaders.html#subheaders-list-subheaders
+        https://material.io/guidelines/components/lists.html#lists-specs
         -->
+        <!-- Single-Line -->
         <com-list>
-            <com-listitem icon="a" type="small">Text</com-listitem>
-            <com-listitem icon="b" type="small">Text</com-listitem>
-            <com-listitem icon="c" type="small">Text</com-listitem>
+            <com-listitem icon="a" line="single">Text</com-listitem>
+            <com-listitem icon="b" line="single">Text</com-listitem>
+            <com-listitem icon="c" line="single">Text</com-listitem>
         </com-list>
 
-        <!--
-        https://material.io/guidelines/components/subheaders.html#subheaders-menu-subheaders
-        -->
+        <!-- Two-Lines -->
         <com-list>
-            <com-listitem icon="a" type="big">Text</com-listitem>
-            <com-listitem icon="b" type="big">Text</com-listitem>
-            <com-listitem icon="c" type="big">Text</com-listitem>
+            <com-listitem icon="a" line="single">Text</com-listitem>
+            <com-listitem icon="b" line="single">Text</com-listitem>
+            <com-listitem icon="c" line="single">Text</com-listitem>
         </com-list>
 
-        <!--
-        https://material.io/guidelines/components/subheaders.html#subheaders-grid-subheaders
-        -->
+        <!-- Three-Lines -->
         <com-list>
-            <com-listitem src="./a/b.png" type="grid">Text</com-listitem>
-            <com-listitem src="./a/b.png" type="grid">Text</com-listitem>
-            <com-listitem src="./a/b.png" type="grid">Text</com-listitem>
+            <com-listitem src="./a/b.png" line="three">Text</com-listitem>
+            <com-listitem src="./a/b.png" line="three">Text</com-listitem>
+            <com-listitem src="./a/b.png" line="three">Text</com-listitem>
         </com-list>
 
     </body>
