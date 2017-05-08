@@ -27,7 +27,7 @@
         <!--
         https://material.io/guidelines/components/subheaders.html
         -->
-        <com-subheader>
+        <com-subheader delimiter>
             Subheader
         </com-subheader>
 
@@ -35,25 +35,59 @@
         https://material.io/guidelines/components/lists.html#lists-specs
         -->
         <!-- Single-Line -->
-        <com-list>
-            <com-listitem icon="a" line="single">Text</com-listitem>
-            <com-listitem icon="b" line="single">Text</com-listitem>
-            <com-listitem icon="c" line="single">Text</com-listitem>
+        <!-- Input: -->
+        <!--
+        <com-list delimiter>
+            <com-listitem icon="a" area line="single">Text</com-listitem>
+            <com-listitem icon="b" area line="single">Text</com-listitem>
+            <com-listitem icon="c" area line="single">Text</com-listitem>
+
+            <com-listitem icon="c" icon-last="b" area line="single">Text</com-listitem>
+        </com-list>
+        -->
+
+        <!-- output: -->
+        <com-list delimiter>
+            <com-listitem line="single" icon="navigate_next" line="single">
+                <com-icon name=">navigate_next"><i class="icons">star</i></com-icon>
+                <com-text><div>Document1</div></com-text>
+                <com-icon name=">navigate_next"><i class="icons">navigate_next</i></com-icon>
+            </com-listitem>
+            <com-listitem line="single">
+                <com-icon name=">navigate_next"><i class="icons">star</i></com-icon>
+                <com-text><div>Document1</div></com-text>
+                <com-icon name=">navigate_next"><i class="icons">navigate_next</i></com-icon>
+            </com-listitem>
+            <com-listitem line="single">
+                <com-icon name=">navigate_next"><i class="icons">star</i></com-icon>
+                <com-text><div>Document1</div></com-text>
+                <com-icon name=">navigate_next"><i class="icons">navigate_next</i></com-icon>
+            </com-listitem>
         </com-list>
 
-        <!-- Two-Lines -->
+        <!-- Single-Line area
         <com-list>
-            <com-listitem icon="a" line="single">Text</com-listitem>
-            <com-listitem icon="b" line="single">Text</com-listitem>
-            <com-listitem icon="c" line="single">Text</com-listitem>
+            <com-listitem icon="a" area line="single">Text</com-listitem>
+            <com-listitem icon="b" area line="single">Text</com-listitem>
+            <com-listitem icon="c" area line="single">Text</com-listitem>
         </com-list>
+         -->
 
-        <!-- Three-Lines -->
+        <!-- Two-Lines
+        <com-list>
+            <com-listitem icon="a" line="double">Text</com-listitem>
+            <com-listitem icon="b" line="double">Text</com-listitem>
+            <com-listitem icon="c" line="double">Text</com-listitem>
+        </com-list>
+         -->
+
+        <!-- Three-Lines
         <com-list>
             <com-listitem src="./a/b.png" line="three">Text</com-listitem>
             <com-listitem src="./a/b.png" line="three">Text</com-listitem>
             <com-listitem src="./a/b.png" line="three">Text</com-listitem>
         </com-list>
+         -->
 
     </body>
 </html>

@@ -7,7 +7,7 @@ module.exports = {
         postcssNested,
         autoprefixer({
             browsers: ["last 2 versions"]
-        }),
-        cssnano
+        })//,
+        //cssnano
     ],
 };

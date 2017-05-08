@@ -9,7 +9,7 @@
  * -- https://zellwk.com/blog/rem-vs-em/
  * -- font sizes, lineheight, Colors & contrast for title, headline, subheading, button, etc
  * --- https://material.io/guidelines/style/typography.html#typography-other-typographic-guidelines
- * - Clearance Icons
+ * - Clearance (Abstand), States(default, acitive, etc), Icons
  * -- https://material.io/guidelines/style/icons.html#icons-system-icons
  * - Components (Vendor)
  * -- https://getmdl.io/index.html
@@ -32,6 +32,8 @@
     --height-80px: 80px;
     --height-88px: 88px;
 
+    --icon-dim : 24px;
+
     --color-8px:  #ff4081;
     --color-16px: #9effff;
     --color-24px: #10b2b2;
@@ -42,8 +44,11 @@
     --color-80px: #34ac71;
     --color-88px: #00796c;
 
+    --border-color: blue;
+
     --key-lines :  16px;
-    --fixed-width: 56px;
+    --repeat-width: 56px;
+    --delimiter:    8px;
 
     --global-color: #172351;
     --global-fontsize: 16px;
@@ -56,14 +61,14 @@
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
-    font-size: 24px;  /* Preferred icon size */
+    font-size: var(--icon-dim);  /* Preferred icon size */
     display: inline-block;
     line-height: 1;
     text-transform: none;
     letter-spacing: normal;
     word-wrap: normal;
     white-space: nowrap;
-    direction: ltr;
+    direction: rtl;
 
     /* Support for all WebKit browsers. */
     -webkit-font-smoothing: antialiased;
@@ -81,48 +86,58 @@ html {
     padding: 0;
     color: var(--global-color);
     font-size: var(--global-fontsize);
+    font-family: Roboto;
 }
 
-/** Font Family **/
-com-header,
-com-subheader,
-com-list {
-    font-family: Roboto;
+[delimiter] {
+    margin-bottom: var(--delimiter);
 }
 
 /** Keylines **/
 com-header,
-com-subheader {
+com-subheader,
+com-listitem {
     padding: 0 var(--key-lines);
-}
-
-/** Display **/
-com-header,
-com-subheader{
-    display: flex;
-    align-items: center;
 }
 
 /** Components **/
 
 com-header {
+    display: flex;
+    align-items: center;
     height: var(--height-56px);
     background-color: var(--color-56px);
 }
 
 com-subheader {
+    display: flex;
+    align-items: center;
     height: var(--height-48px);
     background-color: var(--color-48px);
 }
 
-com-icon {}
-com-list {}
+com-icon {
+    display:block;
+    width: var(--icon-dim);
+    height: var(--icon-dim);
+}
+com-list {
+    display:block;
+}
 
-com-listitem{}
+com-listitem[line="single"]{
+    height: var(--height-48px);
+    background-color: var(--color-48px);
+}
 
 /** Compositions (components) **/
 
 com-header {
+
+    com-icon, h1 {
+        flex-shrink:1;
+        flex-grow:1;
+    }
 
     h1 { width: 35vw }
 
@@ -133,14 +148,9 @@ com-header {
     com-icon[name="favorite"]{ order: 3 }
     com-icon[name="shopping_cart"]{ order: 4 }
 
-    com-icon, h1 {
-        flex-shrink:1;
-        flex-grow:1;
-    }
-
     /** Dimension burger **/
     com-icon[name="menu"  ]{
-        flex-basis: var(--fixed-width);
+        flex-basis: var(--repeat-width);
         flex-shrink:0;
         flex-grow:0;
     }
@@ -149,5 +159,51 @@ com-header {
     com-icon[name="favorite"],
     com-icon[name="shopping_cart"]{
         text-align: right;
+    }
+}
+
+com-listitem {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    com-icon {
+        display: flex;
+        height:100%;
+        i {
+            align-self: center;
+        }
+    }
+
+    com-icon {
+        width: var(--repeat-width);
+        flex-shrink:0;
+        flex-grow:0;
+        &:first-child {
+            direction: ltr;
+        }
+        &:last-child {
+            direction: rtl;
+        }
+        &:last-child {
+            border-bottom: 1px solid var(--border-color);
+        }
+    }
+
+    com-text {
+        display: flex;
+        flex-grow:1;
+        flex-shrink:0;
+        height: 100%;
+        border-bottom: 1px solid var(--border-color);
+        div {
+            align-self: center;
+        }
+    }
+
+    &:last-child com-text,
+    &:last-child com-icon {
+        border-bottom: 0;
     }
 }
