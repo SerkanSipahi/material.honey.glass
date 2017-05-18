@@ -32,7 +32,8 @@
     --height-80px: 80px;
     --height-88px: 88px;
 
-    --icon-dim : 24px;
+    --icon-dim :   24px;
+    --icon-area :  48px;
 
     --color-8px:  #ff4081;
     --color-16px: #9effff;
@@ -45,10 +46,9 @@
     --color-88px: #00796c;
 
     --border-color: blue;
-
-    --key-lines :  16px;
-    --repeat-width: 56px;
-    --delimiter:    8px;
+    --fixed-incr  : 56px;
+    --key-line    : 16px;
+    --delimiter   : 8px;
 
     --global-color: #172351;
     --global-fontsize: 16px;
@@ -87,39 +87,28 @@ html {
     color: var(--global-color);
     font-size: var(--global-fontsize);
     font-family: Roboto;
+    background-color: #f93e7e;
 }
 
 [delimiter] {
     margin-bottom: var(--delimiter);
 }
 
-/** Keylines **/
-com-header,
-com-subheader,
-com-listitem {
-    padding: 0 var(--key-lines);
-}
-
-/** Components **/
-
-com-header {
-    display: flex;
-    align-items: center;
-    height: var(--height-56px);
-    background-color: var(--color-56px);
-}
-
+/** Subheader **/
 com-subheader {
     display: flex;
     align-items: center;
     height: var(--height-48px);
     background-color: var(--color-48px);
+    padding-left: var(--key-line);
 }
 
 com-icon {
-    display:block;
-    width: var(--icon-dim);
-    height: var(--icon-dim);
+    display:flex;
+    width: var(--icon-area);
+    height: var(--icon-area);
+    justify-content: center;
+    align-items: center;
 }
 com-list {
     display:block;
@@ -130,80 +119,42 @@ com-listitem[line="single"]{
     background-color: var(--color-48px);
 }
 
-/** Compositions (components) **/
-
+/** Header **/
 com-header {
 
-    com-icon, h1 {
-        flex-shrink:1;
-        flex-grow:1;
+    display: flex;
+    align-items: center;
+    height: var(--height-56px);
+    background-color: var(--color-56px);
+
+    h1 {
+        flex:1 1;
+        order: 1;
     }
-
-    h1 { width: 35vw }
-
-    /** Order **/
-    h1 { order: 1 }
     com-icon[name="menu"]{ order: 0 }
     com-icon[name="search"]{ order: 2 }
     com-icon[name="favorite"]{ order: 3 }
     com-icon[name="shopping_cart"]{ order: 4 }
 
-    /** Dimension burger **/
-    com-icon[name="menu"  ]{
-        flex-basis: var(--repeat-width);
-        flex-shrink:0;
-        flex-grow:0;
+    /* keylines */
+    com-icon:nth-of-type(1){
+        /* 48px(icon)+2px(icon-border)+22px = 72px; */
+        margin-left: 2px;
+        margin-right: 22px;
     }
-
-    com-icon[name="search"],
-    com-icon[name="favorite"],
-    com-icon[name="shopping_cart"]{
-        text-align: right;
+    com-icon:last-child {
+        margin-right: 2px;
     }
 }
 
-com-listitem {
-
+/** Listitem **/
+com-listitem,
+com-listitem > div {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    com-icon {
-        display: flex;
-        height:100%;
-        i {
-            align-self: center;
-        }
-    }
-
-    com-icon {
-        width: var(--repeat-width);
-        flex-shrink:0;
-        flex-grow:0;
-        &:first-child {
-            direction: ltr;
-        }
-        &:last-child {
-            direction: rtl;
-        }
-        &:last-child {
-            border-bottom: 1px solid var(--border-color);
-        }
-    }
-
-    com-text {
-        display: flex;
-        flex-grow:1;
-        flex-shrink:0;
-        height: 100%;
-        border-bottom: 1px solid var(--border-color);
-        div {
-            align-self: center;
-        }
-    }
-
-    &:last-child com-text,
-    &:last-child com-icon {
-        border-bottom: 0;
-    }
+}
+com-listitem > div {
+    flex: 1 1;
+    border-bottom: 1px solid var(--border-color)
 }
