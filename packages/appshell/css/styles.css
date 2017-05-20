@@ -12,7 +12,12 @@
  * - Clearance (Abstand), States(default, acitive, etc), Icons
  * -- https://material.io/guidelines/style/icons.html#icons-system-icons
  * - Components (Vendor)
+ * -- https://material.io/guidelines/resources/sticker-sheets-icons.html
  * -- https://getmdl.io/index.html
+ * - Icon Riple
+ * -- Ripple effekt von buttons/icons
+ * -- https://material.io/guidelines/components/buttons.html#buttons-toggle-buttons
+ * -- https://material.io/guidelines/motion/choreography.html#choreography-radial-reaction
  * - Elevation & shadows
  * -- https://material.io/guidelines/material-design/elevation-shadows.html#elevation-shadows-elevation-android
  */
@@ -33,7 +38,8 @@
     --height-88px: 88px;
 
     --icon-dim :   24px;
-    --icon-area :  48px;
+    --icon-area :  44px;
+    --icon-live :  48px;
 
     --color-8px:  #ff4081;
     --color-16px: #9effff;
@@ -46,6 +52,8 @@
     --color-88px: #00796c;
 
     --border-color: blue;
+    --circle-color: #0c3189;
+
     --fixed-incr  : 56px;
     --key-line    : 16px;
     --delimiter   : 8px;
@@ -87,71 +95,123 @@ html {
     color: var(--global-color);
     font-size: var(--global-fontsize);
     font-family: Roboto;
-    background-color: #f93e7e;
+    background-color: #69969C;
 }
+
+/*************/
+/** Options **/
+/*************/
+.flex-order-0  {order:  0}
+.flex-order-1  {order:  1}
+.flex-order-2  {order:  2}
+.flex-order-3  {order:  3}
+.flex-order-4  {order:  4}
+.flex-order-5  {order:  5}
+.flex-order-6  {order:  6}
+.flex-order-7  {order:  7}
+.flex-order-8  {order:  8}
+.flex-order-9  {order:  8}
+.flex-order-10 {order: 10}
 
 [delimiter] {
     margin-bottom: var(--delimiter);
 }
-
+/****************/
 /** com-header **/
+/****************/
 com-header {
     display: flex;
     align-items: center;
     height: var(--height-56px);
     background-color: var(--color-56px);
-
+}
+com-header {
     h1 {
         flex: 1 1;
     }
-    h1 {order: 1}
-    com-icon[name="menu"]{ order: 0 }
-    com-icon[name="search"]{ order: 2 }
-    com-icon[name="favorite"]{ order: 3 }
-    com-icon[name="shopping_cart"]{ order: 4 }
-
-    /* keylines */
     com-icon:nth-of-type(1){
+        /* keylines */
         /* 48px(icon)+2px(icon-border)+22px = 72px(key-line); */
         margin-left: 2px;
-        margin-right: 22px;
+        margin-right: 24px;
     }
     com-icon:last-child {
+        /* +2px(icon-border) */
         margin-right: 2px;
     }
 }
-
+/**************/
 /** com-icon **/
-com-icon {
+/**************/
+com-icon,
+com-icon > span {
     display:flex;
-    width: var(--icon-area);
-    height: var(--icon-area);
     justify-content: center;
     align-items: center;
 }
-
-/** com-List **/
-com-list {
-    display:block;
+com-icon {
+    width: var(--icon-live);
+    height: var(--icon-live);
+}
+com-icon > span {
+    width: var(--icon-area);
+    height: var(--icon-area);
+}
+com-icon[circle] > span {
+    background-color: var(--circle-color);
+    border-radius: 50%;
 }
 
+/**************/
+/** com-List **/
+/**************/
+com-list {
+    display:block;
+    cursor: pointer;
+}
+
+/******************/
 /** com-listitem **/
-com-listitem[line="single"]{
+/******************/
+com-listitem[line="single"] {
     height: var(--height-48px);
     background-color: var(--color-48px);
 }
+com-listitem[circle] {
+    height: var(--height-56px);
+    background-color: var(--color-56px);
+}
+
 com-listitem,
 com-listitem > div {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 100%;
 }
 com-listitem > div {
     flex: 1 1;
+}
+com-listitem > div {
     border-bottom: 1px solid var(--border-color)
 }
+com-listitem:last-child > div {
+    border-bottom: 0;
+}
+com-listitem com-icon:nth-of-type(1){
+    /* keylines */
+    /* 48px(icon)+2px(icon-border)+22px = 72px(key-line); */
+    margin-left: 2px;
+    margin-right: 22px;
+}
+com-listitem div com-icon:last-child {
+    /* +2px(icon-border) */
+    margin-right: 2px;
+}
 
+/***************/
 /** Subheader **/
+/***************/
 com-subheader {
     display: flex;
     align-items: center;

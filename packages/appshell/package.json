@@ -4,7 +4,8 @@
   "description": "Application shell",
   "main": "index.js",
   "bin": {
-    "postcss": "node_modules/.bin/postcss"
+    "postcss": "node_modules/.bin/postcss",
+    "lerna": "node_modules/.bin/lerna"
   },
   "scripts": {
     "postcss-config": "rm -rf postcss.config.js && ln -s ../../postcss.config.js postcss.config.js",
@@ -31,6 +32,7 @@
     "normalize.css": "6.0.0",
     "postcss": "5.2.17",
     "postcss-cli": "3.2.0",
+    "postcss-custom-selectors": "^4.0.1",
     "postcss-nested": "1.0.1"
   }
 }
