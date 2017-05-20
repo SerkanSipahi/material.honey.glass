@@ -172,11 +172,9 @@ com-icon > span {
     width: var(--icon-live);
     height: var(--icon-live);
 }
-com-icon[circle] > span {
+com-icon[circle]{
     background-color: var(--circle-color);
     border-radius: 50%;
-    width: var(--icon-area-d);
-    height: var(--icon-area-d);
 }
 
 /**************/
@@ -187,21 +185,33 @@ ul[is="com-list"] {
         height: var(--height-48px);
         background-color: var(--color-48px);
     }
+
     &[line="single"][circle] li {
         height: var(--height-56px);
         background-color: var(--color-56px);
     }
+
+    li > com-icon[circle],
+    li > div com-icon[circle]{
+        width: var(--icon-area-d);
+        height: var(--icon-area-d);
+    }
+
     li > com-icon:nth-of-type(1){
         /* keylines */
         /* 48px(icon)+24px = 72px(key-line); */
         margin-right: 20px;
         margin-left: 4px;
     }
-    li div com-icon:last-child{
+
+    li > div com-icon:last-child{
         margin-right: 4px;
     }
+    li > div com-icon[circle]:last-child{
+        margin: 0 16px;
+    }
 
-    &[circle] li > com-icon:nth-of-type(1){
+    li > com-icon[circle]:nth-of-type(1){
         /* keylines */
         /* 40px(icon)+16px+16px = 72px(key-line); */
         margin: 0 16px;
@@ -214,10 +224,12 @@ ul[is="com-list"] {
         justify-content: space-between;
         height: 100%;
     }
+
     li > div {
         flex: 1 1;
         border-bottom: 1px solid var(--border-color);
     }
+
     li:last-child > div {
         border-bottom: 0;
     }
