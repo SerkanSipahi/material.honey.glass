@@ -56,7 +56,7 @@
     --circle-color: #0c3189;
 
     --fixed-incr  : 56px;
-    --key-line    : calc(16px);
+    --key-line    : 16px;
     --delimiter   : 8px;
 
     --global-color: #172351;
@@ -117,9 +117,14 @@ html {
 [delimiter] {
     margin-bottom: var(--delimiter);
 }
-/****************/
+
+/******************/
+/** Calibrations **/
+/******************/
+
+/************/
 /** header **/
-/****************/
+/************/
 header {
     display: flex;
     align-items: center;
@@ -132,9 +137,28 @@ header {
     com-icon:nth-of-type(1){
         /* keylines */
         /* 48px(icon)+24px = 72px(key-line); */
-        margin-right: 24px;
+        margin-right: 20px;
+        /* extra buffer */
+        margin-left: 4px;
+    }
+    com-icon:last-child {
+        /* extra buffer */
+        margin-right: 4px;
     }
 }
+
+/***************/
+/** Subheader **/
+/***************/
+com-subheader {
+    display: flex;
+    align-items: center;
+    height: var(--height-48px);
+    background-color: var(--color-48px);
+    padding-left: calc(var(--key-line) + 4px);
+    /* extra buffer */
+}
+
 /**************/
 /** com-icon **/
 /**************/
@@ -159,7 +183,7 @@ com-icon[circle] > span {
 /** com-List **/
 /**************/
 ul[is="com-list"] {
-    &[line="single"][default] li {
+    &[line="single"] li {
         height: var(--height-48px);
         background-color: var(--color-48px);
     }
@@ -167,11 +191,16 @@ ul[is="com-list"] {
         height: var(--height-56px);
         background-color: var(--color-56px);
     }
-    &[default] li > com-icon:nth-of-type(1){
+    li > com-icon:nth-of-type(1){
         /* keylines */
         /* 48px(icon)+24px = 72px(key-line); */
-        margin-right: 24px;
+        margin-right: 20px;
+        margin-left: 4px;
     }
+    li div com-icon:last-child{
+        margin-right: 4px;
+    }
+
     &[circle] li > com-icon:nth-of-type(1){
         /* keylines */
         /* 40px(icon)+16px+16px = 72px(key-line); */
@@ -192,15 +221,4 @@ ul[is="com-list"] {
     li:last-child > div {
         border-bottom: 0;
     }
-}
-
-/***************/
-/** Subheader **/
-/***************/
-com-subheader {
-    display: flex;
-    align-items: center;
-    height: var(--height-48px);
-    background-color: var(--color-48px);
-    padding-left: var(--key-line);
 }
