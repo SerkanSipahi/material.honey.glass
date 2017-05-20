@@ -37,9 +37,10 @@
     --height-80px: 80px;
     --height-88px: 88px;
 
-    --icon-dim :   24px;
-    --icon-area :  44px;
-    --icon-live :  48px;
+    --icon-dim    :  24px;
+    --icon-area-d :  40px;
+    --icon-area   :  44px;
+    --icon-live   :  48px;
 
     --color-8px:  #ff4081;
     --color-16px: #9effff;
@@ -131,13 +132,8 @@ com-header {
     }
     com-icon:nth-of-type(1){
         /* keylines */
-        /* 48px(icon)+2px(icon-border)+22px = 72px(key-line); */
-        margin-left: 2px;
+        /* 48px(icon)+24px = 72px(key-line); */
         margin-right: 24px;
-    }
-    com-icon:last-child {
-        /* +2px(icon-border) */
-        margin-right: 2px;
     }
 }
 /**************/
@@ -149,17 +145,15 @@ com-icon > span {
     justify-content: center;
     align-items: center;
 }
-com-icon {
+com-icon > span {
     width: var(--icon-live);
     height: var(--icon-live);
-}
-com-icon > span {
-    width: var(--icon-area);
-    height: var(--icon-area);
 }
 com-icon[circle] > span {
     background-color: var(--circle-color);
     border-radius: 50%;
+    width: var(--icon-area-d);
+    height: var(--icon-area-d);
 }
 
 /**************/
@@ -181,7 +175,12 @@ com-listitem[circle] {
     height: var(--height-56px);
     background-color: var(--color-56px);
 }
-
+com-listitem[circle] com-icon {
+    margin-left: var(--key-line);
+}
+com-listitem[circle] com-icon {
+    margin-right: var(--key-line);
+}
 com-listitem,
 com-listitem > div {
     display: flex;
@@ -198,15 +197,10 @@ com-listitem > div {
 com-listitem:last-child > div {
     border-bottom: 0;
 }
-com-listitem com-icon:nth-of-type(1){
+com-listitem > com-icon:nth-of-type(1){
     /* keylines */
-    /* 48px(icon)+2px(icon-border)+22px = 72px(key-line); */
-    margin-left: 2px;
-    margin-right: 22px;
-}
-com-listitem div com-icon:last-child {
-    /* +2px(icon-border) */
-    margin-right: 2px;
+    /* 48px(icon)+24px = 72px(key-line); */
+    margin-right: 24px;
 }
 
 /***************/
