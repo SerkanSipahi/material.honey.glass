@@ -192,13 +192,19 @@ ul[is="com-list"] {
     /*************/
     /** heights listitem (li) **/
     /*************/
-    &[line="single"] li {
+    &[xsmall] li {
         height: var(--height-48px);
         background-color: var(--color-48px);
     }
-    &[line="single"][circle] li {
+    &[small] li {
         height: var(--height-56px);
         background-color: var(--color-56px);
+    }
+    &[medium] li {
+        /** ...code... **/
+    }
+    &[large] li {
+        /** ...code... **/
     }
 
     /************/
