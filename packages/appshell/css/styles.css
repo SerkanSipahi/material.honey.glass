@@ -58,6 +58,7 @@
     --fixed-incr  : 56px;
     --key-line    : 16px;
     --delimiter   : 8px;
+    --ext-buffer  : 4px;
 
     --global-color: #172351;
     --global-fontsize: 16px;
@@ -139,11 +140,11 @@ header {
         /* 48px(icon)+24px = 72px(key-line); */
         margin-right: 20px;
         /* extra buffer */
-        margin-left: 4px;
+        margin-left: var(--ext-buffer);;
     }
     com-icon:last-child {
         /* extra buffer */
-        margin-right: 4px;
+        margin-right: var(--ext-buffer);;
     }
 }
 
@@ -192,19 +193,21 @@ ul[is="com-list"] {
     /*************/
     /** heights listitem (li) **/
     /*************/
-    &[xsmall] li {
+    &[size="xsmall"] li {
         height: var(--height-48px);
         background-color: var(--color-48px);
     }
-    &[small] li {
+    &[size="small"] li {
         height: var(--height-56px);
         background-color: var(--color-56px);
     }
-    &[medium] li {
-        /** ...code... **/
+    &[size="medium"] li {
+        height: var(--height-72px);
+        background-color: var(--color-72px);
     }
-    &[large] li {
-        /** ...code... **/
+    &[size="large"] li {
+        height: var(--height-80px);
+        background-color: var(--color-80px);
     }
 
     /************/
@@ -236,38 +239,48 @@ ul[is="com-list"] {
         /* 48px(icon)+4px+4px+16 = 72px(key-line); */
 
         &:nth-of-type(1){
-            margin-right: 4px;
-            margin-left: 4px;
+            margin-right: var(--ext-buffer);
+            margin-left: var(--ext-buffer);
         }
-        &+div {
-            margin-left: 16px;
+        & + div {
+            margin-left: var(--key-line);
         }
         /** extra buffer for last com-icon **/
-        &+div com-icon {
-            margin-right: 4px;
+        & + div com-icon {
+            margin-right: var(--ext-buffer);
         }
     }
 
     /*******************/
     /** circle gutter **/
     /*******************/
-    li > com-icon[circle]{
+    li > com-icon[circle] {
 
         /* keylines */
         /* 40px(icon)+16px+16px = 72px(key-line); */
 
         &:nth-of-type(1){
-            margin-left: 16px;
+            margin-left: var(--key-line);
         }
-        &+div {
-            margin-left: 16px;
+        & + div {
+            margin-left: var(--key-line);
         }
         & > div com-icon[circle]:last-child{
-            margin: 0 16px;
+            margin: 0 var(--key-line);
         }
         /** extra buffer for last com-icon **/
-        &+div com-icon {
-            margin-right: 4px;
+        & + div com-icon {
+            margin-right: var(--ext-buffer);
         }
     }
+}
+
+/**************/
+/** notes **/
+/**************/
+p {
+    display: flex;
+    align-items: stretch;
+    padding: 0 var(--key-line);
+    background-color: white;
 }

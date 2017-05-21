@@ -17,131 +17,135 @@
         <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     </head>
     <body>
+        <com-app>
+            <!--
+            <com-icon name="a" order="3" circle></com-icon>
+            <com-icon name="a" order="2" ></com-icon>
+            <com-icon name="a" order="1" circlearea="live"></com-icon>
+            -->
 
-        <!--
-        <com-icon name="a" order="3" circle></com-icon>
-        <com-icon name="a" order="2" ></com-icon>
-        <com-icon name="a" order="1" circlearea="live"></com-icon>
-        -->
+            <header>
+                <!-- h1 should be take there ordering of 1 when he is in com-header -->
+                <h1 is="com-h1" class="flex-order-1">Title</h1>
+                <com-icon class="flex-order-0" id="menu"><span><i class="icons">menu</i></span></com-icon>
+                <com-icon class="flex-order-2" id="search"><span><i class="icons">search</i></span></com-icon>
+                <com-icon class="flex-order-3" id="shopping_cart"><span><i class="icons">shopping_cart</i></span></com-icon>
+            </header>
 
-        <header>
-            <!-- h1 should be take there ordering of 1 when he is in com-header -->
-            <h1 is="com-h1" class="flex-order-1">Title</h1>
-            <com-icon class="flex-order-0" id="menu"><span><i class="icons">menu</i></span></com-icon>
-            <com-icon class="flex-order-2" id="search"><span><i class="icons">search</i></span></com-icon>
-            <com-icon class="flex-order-3" id="shopping_cart"><span><i class="icons">shopping_cart</i></span></com-icon>
-        </header>
+            <!--
+            https://material.io/guidelines/components/subheaders.html
+            -->
+            <com-subheader delimiter>
+                Files
+            </com-subheader>
 
-        <!--
-        https://material.io/guidelines/components/subheaders.html
-        -->
-        <com-subheader delimiter>
-            Files
-        </com-subheader>
+            <!--
+            https://material.io/guidelines/components/lists.html#lists-specs
+            @todo: add clean task (copy it from app-decorators)
+            @todo: update package.json in ./ and ./packages
+            @todo: add css optimiz (combine, etc)
+            @todo: add go server (gzip, https2, etc)
+            @todo: measuring load speed (z.b. mit lighthouse), etc
+            @todo: parse with assetgraph and make => size="xsmall" to => .size-xsmall
+            @todo: regression tests einbauen
+            -->
+            <!-- Single-Line -->
+            <!-- Input: -->
 
-        <!--
-        https://material.io/guidelines/components/lists.html#lists-specs
-        @todo: add clean task (copy it from app-decorators)
-        @todo: update package.json in ./ and ./packages
-        @todo: add css optimiz (combine, etc)
-        @todo: add go server (gzip, https2, etc)
-        @todo: measuring load speed (z.b. mit lighthouse), etc
-        -->
-        <!-- Single-Line -->
-        <!-- Input: -->
+            <!--
+            <ul is="com-list" xsmall delimiter>
+                <li icon="a" ricon="a">Text</li>
+                <li icon="b" ricon="a">Text</li>
+                <li icon="c" >Text</li>
+            </ul>
+            -->
+            <!-- output: -->
+            <ul is="com-list" size="xsmall" delimiter>
+                <li icon="star">
+                    <com-icon icon="star"><span><i class="icons">star</i></span></com-icon>
+                    <div>
+                        <com-text><div>Document1</div></com-text>
+                        <com-icon name="navigate_next"><span><i class="icons">navigate_next</i></span></com-icon>
+                    </div>
+                </li>
+                <li icon="star">
+                    <com-icon icon="star"><span><i class="icons">star</i></span></com-icon>
+                    <div>
+                        <com-text><div>Document1</div></com-text>
+                    </div>
+                </li>
+                <li icon="star">
+                    <com-icon icon="star"><span><i class="icons">star</i></span></com-icon>
+                    <div>
+                        <com-text><div>Document1</div></com-text>
+                    </div>
+                </li>
+            </ul>
 
-        <!--
-        <ul is="com-list" xsmall delimiter>
-            <li icon="a" ricon="a">Text</li>
-            <li icon="b" ricon="a">Text</li>
-            <li icon="c" >Text</li>
-        </ul>
-        -->
-        <!-- output: -->
-        <ul is="com-list" xsmall delimiter>
-            <li icon="star">
-                <com-icon icon="star"><span><i class="icons">star</i></span></com-icon>
-                <div>
-                    <com-text><div>Document1</div></com-text>
-                    <com-icon name="navigate_next"><span><i class="icons">navigate_next</i></span></com-icon>
-                </div>
-            </li>
-            <li icon="star">
-                <com-icon icon="star"><span><i class="icons">star</i></span></com-icon>
-                <div>
-                    <com-text><div>Document1</div></com-text>
-                    <com-icon name="navigate_next"><span><i class="icons">navigate_next</i></span></com-icon>
-                </div>
-            </li>
-            <li icon="star">
-                <com-icon icon="star"><span><i class="icons">star</i></span></com-icon>
-                <div>
-                    <com-text><div>Document1</div></com-text>
-                </div>
-            </li>
-        </ul>
+            <com-subheader>
+                Owners
+            </com-subheader>
 
-        <com-subheader>
-            Owners
-        </com-subheader>
+            <!-- Single-Line area
+            <ul is="com-list" small delimiter>
+                <li icon="a" ricon="a">Text</li>
+                <li icon="b" ricon="a">Text</li>
+                <li icon="c" ricon="a">Text</li>
+            </ul>
+             -->
+            <ul is="com-list" size="small" delimiter>
+                <li icon="star">
+                    <com-icon circle name="star"><span><i class="icons">star</i></span></com-icon>
+                    <div>
+                        <com-text><div>Document1</div></com-text>
+                        <com-icon name=">navigate_next"><span><i class="icons">navigate_next</i></span></com-icon>
+                    </div>
+                </li>
+                <li icon="star">
+                    <com-icon circle name="star"><span><i class="icons">star</i></span></com-icon>
+                    <div>
+                        <com-text><div>Document1</div></com-text>
+                    </div>
+                </li>
+                <li icon="star">
+                    <com-icon circle name="star"><span><i class="icons">star</i></span></com-icon>
+                    <div>
+                        <com-text><div>Document1</div></com-text>
+                    </div>
+                </li>
+            </ul>
 
-        <!-- Single-Line area
-        <ul is="com-list" small delimiter>
-            <li icon="a" ricon="a">Text</li>
-            <li icon="b" ricon="a">Text</li>
-            <li icon="c" ricon="a">Text</li>
-        </ul>
-         -->
-        <ul is="com-list" small delimiter>
-            <li icon="star">
-                <com-icon circle name="star"><span><i class="icons">star</i></span></com-icon>
-                <div>
-                    <com-text><div>Document1</div></com-text>
-                    <com-icon name=">navigate_next"><span><i class="icons">navigate_next</i></span></com-icon>
-                </div>
-            </li>
-            <li icon="star">
-                <com-icon circle name="star"><span><i class="icons">star</i></span></com-icon>
-                <div>
-                    <com-text><div>Document1</div></com-text>
-                    <com-icon name=">navigate_next"><span><i class="icons">navigate_next</i></span></com-icon>
-                </div>
-            </li>
-            <li icon="star">
-                <com-icon circle name="star"><span><i class="icons">star</i></span></com-icon>
-                <div>
-                    <com-text><div>Document1</div></com-text>
-                    <com-icon name=">navigate_next"><span><i class="icons">navigate_next</i></span></com-icon>
-                </div>
-            </li>
-        </ul>
+            <com-subheader>
+                Notes
+            </com-subheader>
 
-        <com-subheader>
-            Notes
-        </com-subheader>
+            <p>
+                Lorum Ipsum
+            </p>
 
-        <!-- Single-Line area
-        <ul is="com-list" small delimiter>
-            <li icon="a" ricon="a">Text</li>
-            <li icon="b" ricon="a">Text</li>
-            <li icon="c" ricon="a">Text</li>
-        </ul>
-         -->
+            <!-- Single-Line area
+            <ul is="com-list" small delimiter>
+                <li icon="a" ricon="a">Text</li>
+                <li icon="b" ricon="a">Text</li>
+                <li icon="c" ricon="a">Text</li>
+            </ul>
+             -->
 
-        <!-- Two-Lines
-        <ul is="com-list" medium delimiter>
-            <li icon="a" ricon="a">Text</li>
-            <li icon="b" ricon="a">Text</li>
-            <li icon="c" ricon="a">Text</li>
-        </ul>
-         -->
+            <!-- Two-Lines
+            <ul is="com-list" medium delimiter>
+                <li icon="a" ricon="a">Text</li>
+                <li icon="b" ricon="a">Text</li>
+                <li icon="c" ricon="a">Text</li>
+            </ul>
+             -->
 
-        <!-- Three-Lines
-        <ul is="com-list" large delimiter>
-            <li avatar="a">Text</li>
-            <li avatar="b">Text</li>
-            <li avatar="c">Text</li>
-        </ul>
-         -->
+            <!-- Three-Lines
+            <ul is="com-list" large delimiter>
+                <li avatar="a">Text</li>
+                <li avatar="b">Text</li>
+                <li avatar="c">Text</li>
+            </ul>
+             -->
+        </com-app>
     </body>
 </html>
