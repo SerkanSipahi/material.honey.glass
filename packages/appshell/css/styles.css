@@ -236,7 +236,8 @@ ul[is="com-list"] {
         &+div {
             margin-left: 16px;
         }
-        &:last-child{
+        /** extra buffer for last com-icon **/
+        &+div com-icon {
             margin-right: 4px;
         }
     }
@@ -257,6 +258,10 @@ ul[is="com-list"] {
         }
         & > div com-icon[circle]:last-child{
             margin: 0 16px;
+        }
+        /** extra buffer for last com-icon **/
+        &+div com-icon {
+            margin-right: 4px;
         }
     }
 }
