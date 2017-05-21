@@ -156,7 +156,6 @@ com-subheader {
     height: var(--height-48px);
     background-color: var(--color-48px);
     padding-left: calc(var(--key-line) + 4px);
-    /* extra buffer */
 }
 
 /**************/
@@ -168,6 +167,7 @@ com-icon > span {
     justify-content: center;
     align-items: center;
 }
+/** default com-icon dimensions **/
 com-icon > span {
     width: var(--icon-live);
     height: var(--icon-live);
@@ -181,6 +181,17 @@ com-icon[circle]{
 /** com-List **/
 /**************/
 ul[is="com-list"] {
+
+    li, li > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    /*************/
+    /** heights listitem (li) **/
+    /*************/
     &[line="single"] li {
         height: var(--height-48px);
         background-color: var(--color-48px);
@@ -191,46 +202,48 @@ ul[is="com-list"] {
         background-color: var(--color-56px);
     }
 
+    /************/
+    /** border **/
+    /************/
+    li > div {
+        flex: 1 1;
+        border-bottom: 1px solid var(--border-color);
+    }
+    li:last-child > div {
+        border-bottom: 0;
+    }
+
+    /*********************************************/
+    /** circle dimensions (height, width) in ul **/
+    /*********************************************/
     li > com-icon[circle],
     li > div com-icon[circle]{
         width: var(--icon-area-d);
         height: var(--icon-area-d);
     }
 
+    /********************************/
+    /** default gutter (no circle) **/
+    /********************************/
     li > com-icon:nth-of-type(1){
         /* keylines */
         /* 48px(icon)+24px = 72px(key-line); */
         margin-right: 20px;
         margin-left: 4px;
     }
-
     li > div com-icon:last-child{
         margin-right: 4px;
     }
+
+    /*******************/
+    /** circle gutter **/
+    /*******************/
     li > div com-icon[circle]:last-child{
         margin: 0 16px;
     }
-
     li > com-icon[circle]:nth-of-type(1){
         /* keylines */
         /* 40px(icon)+16px+16px = 72px(key-line); */
         margin: 0 16px;
-    }
-
-    li,
-    li > div {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 100%;
-    }
-
-    li > div {
-        flex: 1 1;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    li:last-child > div {
-        border-bottom: 0;
     }
 }

@@ -52,20 +52,13 @@
 
         <!--
         <ul is="com-list" line="single" delimiter>
-            <li icon="a">Text</li>
-            <li icon="b">Text</li>
-            <li icon="c">Text</li>
+            <li icon="a" ricon="a">Text</li>
+            <li icon="b" ricon="a">Text</li>
+            <li icon="c" >Text</li>
         </ul>
         -->
         <!-- output: -->
         <ul is="com-list" line="single" delimiter>
-            <li icon="star" >
-                <com-icon icon="star"><span><i class="icons">star</i></span></com-icon>
-                <div>
-                    <com-text><div>Document1</div></com-text>
-                    <com-icon name="navigate_next"><span><i class="icons">navigate_next</i></span></com-icon>
-                </div>
-            </li>
             <li icon="star">
                 <com-icon icon="star"><span><i class="icons">star</i></span></com-icon>
                 <div>
@@ -77,7 +70,13 @@
                 <com-icon icon="star"><span><i class="icons">star</i></span></com-icon>
                 <div>
                     <com-text><div>Document1</div></com-text>
-                    <com-icon icon="navigate_next"><span><i class="icons">navigate_next</i></span></com-icon>
+                    <com-icon name="navigate_next"><span><i class="icons">navigate_next</i></span></com-icon>
+                </div>
+            </li>
+            <li icon="star">
+                <com-icon icon="star"><span><i class="icons">star</i></span></com-icon>
+                <div>
+                    <com-text><div>Document1</div></com-text>
                 </div>
             </li>
         </ul>
@@ -87,18 +86,18 @@
         </com-subheader>
 
         <!-- Single-Line area
-        <ul is="com-list" circle first line="single" delimiter>
-            <li icon="a">Text</li>
-            <li icon="b">Text</li>
-            <li icon="c">Text</li>
+        <ul is="com-list" circle line="single" delimiter>
+            <li icon="a" ricon="a">Text</li>
+            <li icon="b" ricon="a">Text</li>
+            <li icon="c" ricon="a">Text</li>
         </ul>
          -->
         <ul is="com-list" circle line="single" delimiter>
-            <li icon="star" >
+            <li icon="star">
                 <com-icon circle name="star"><span><i class="icons">star</i></span></com-icon>
                 <div>
                     <com-text><div>Document1</div></com-text>
-                    <com-icon circle name=">navigate_next"><span><i class="icons">navigate_next</i></span></com-icon>
+                    <com-icon name=">navigate_next"><span><i class="icons">navigate_next</i></span></com-icon>
                 </div>
             </li>
             <li icon="star">
@@ -121,11 +120,19 @@
             Notes
         </com-subheader>
 
+        <!-- Single-Line area
+        <ul is="com-list" circle first only line="single" delimiter>
+            <li icon="a" ricon="a">Text</li>
+            <li icon="b" ricon="a">Text</li>
+            <li icon="c" ricon="a">Text</li>
+        </ul>
+         -->
+
         <!-- Two-Lines
         <ul is="com-list" line="double" delimiter>
-            <li icon="a">Text</li>
-            <li icon="b">Text</li>
-            <li icon="c">Text</li>
+            <li icon="a" ricon="a">Text</li>
+            <li icon="b" ricon="a">Text</li>
+            <li icon="c" ricon="a">Text</li>
         </ul>
          -->
 
