@@ -279,7 +279,7 @@ ul[is="com-list"] {
         }
         /** extra buffer for last com-icon **/
         & + div com-icon {
-            margin-right: var(--ext-buffer);
+            margin-right: var(--key-line);
         }
     }
 }
