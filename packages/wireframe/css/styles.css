@@ -99,6 +99,10 @@ html {
     font-family: Roboto;
     background-color: #69969C;
 }
+a {
+    /* do not show blue border on click a-link */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 
 /*************/
 /** Options **/
