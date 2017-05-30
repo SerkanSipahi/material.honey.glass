@@ -37,9 +37,10 @@
     --height-80px: 80px;
     --height-88px: 88px;
 
+    --title-begin :  72px;
+
     --icon-dim    :  24px;
-    --icon-area-d :  40px;
-    --icon-area   :  44px;
+    --icon-area   :  40px;
     --icon-live   :  48px;
 
     --color-8px:  #ff4081;
@@ -176,15 +177,25 @@ com-icon > span {
     display:flex;
     justify-content: center;
     align-items: center;
+    flex: 0 0 auto;
 }
-/** default com-icon dimensions **/
-com-icon > span {
+
+/*********************************************************/
+/** com-icon - default dimensions (height, width) in ul **/
+/*********************************************************/
+com-icon.default > span {
     width: var(--icon-live);
     height: var(--icon-live);
 }
-com-icon[circle]{
-    background-color: var(--circle-color);
+
+/********************************************************/
+/** com-icon - circle dimensions (height, width) in ul **/
+/********************************************************/
+com-icon.circle {
     border-radius: 50%;
+    background-color: var(--circle-color);
+    width: var(--icon-area);
+    height: var(--icon-area);
 }
 
 /**************/
@@ -199,88 +210,61 @@ ul[is="com-list"] {
         height: 100%;
     }
 
+    /**************************/
+    /*** title description ***/
+    /**************************/
+    li {
+        com-icon.circle.licon + div {
+            margin-left: var(--key-line);
+        }
+        > div {
+            flex: 1 1 auto;
+            margin-left: calc(var(--key-line) + var(--ext-buffer));
+            border-bottom: 1px solid var(--border-color);
+        }
+        &:last-child > div {
+            border-bottom: 0;
+        }
+    }
+
     /*************/
-    /** heights listitem (li) **/
+    /** dimensons listitem (li) **/
     /*************/
-    &[size="xsmall"] li {
+    &.xsmall li {
         height: var(--height-48px);
         background-color: var(--color-48px);
     }
-    &[size="small"] li {
+    &.small li {
         height: var(--height-56px);
         background-color: var(--color-56px);
     }
-    &[size="medium"] li {
+    &.medium li {
         height: var(--height-72px);
         background-color: var(--color-72px);
     }
-    &[size="large"] li {
+    &.large li {
         height: var(--height-80px);
         background-color: var(--color-80px);
     }
 
+    /********************/
+    /*** default icon ***/
+    /********************/
+    com-icon.default.licon {
+        margin-left: var(--ext-buffer);
+    }
+    com-icon.default.ricon {
+        margin-right: var(--ext-buffer);
+    }
+
     /************/
-    /** border **/
+    /** circle icon **/
     /************/
-    li > div {
-        flex: 1 1;
-        border-bottom: 1px solid var(--border-color);
+    com-icon.circle.licon {
+        margin-left: var(--key-line);
     }
-    li:last-child > div {
-        border-bottom: 0;
-    }
-
-    /*********************************************/
-    /** circle dimensions (height, width) in ul **/
-    /*********************************************/
-    li > com-icon[circle],
-    li > div com-icon[circle]{
-        width: var(--icon-area-d);
-        height: var(--icon-area-d);
-    }
-
-    /********************************/
-    /** default gutter (no circle) **/
-    /********************************/
-    li > com-icon:not([circle]) {
-
-        /* keylines */
-        /* 48px(icon)+4px+4px+16 = 72px(key-line); */
-
-        &:nth-of-type(1){
-            margin-right: var(--ext-buffer);
-            margin-left: var(--ext-buffer);
-        }
-        & + div {
-            margin-left: var(--key-line);
-        }
-        /** extra buffer for last com-icon **/
-        & + div com-icon {
-            margin-right: var(--ext-buffer);
-        }
-    }
-
-    /*******************/
-    /** circle gutter **/
-    /*******************/
-    li > com-icon[circle] {
-
-        /* keylines */
-        /* 40px(icon)+16px+16px = 72px(key-line); */
-
-        &:nth-of-type(1){
-            margin-left: var(--key-line);
-        }
-        & + div {
-            margin-left: var(--key-line);
-        }
-        & > div com-icon[circle]:last-child{
-            margin: 0 var(--key-line);
-        }
-        /** extra buffer for last com-icon **/
-        & + div com-icon {
-            margin-right: var(--key-line);
-        }
+    com-icon.circle.ricon {
+        margin-right: var(--key-line);
     }
 }
 

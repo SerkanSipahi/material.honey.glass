@@ -27,9 +27,9 @@
             <header>
                 <!-- h1 should be take there ordering of 1 when he is in com-header -->
                 <h1 is="com-h1" class="flex-order-1">Title</h1>
-                <com-icon class="flex-order-0" id="menu"><span><i class="icons">menu</i></span></com-icon>
-                <com-icon class="flex-order-2" id="search"><span><i class="icons">search</i></span></com-icon>
-                <com-icon class="flex-order-3" id="shopping_cart"><span><i class="icons">shopping_cart</i></span></com-icon>
+                <com-icon class="flex-order-0 default" id="menu"><span><i class="icons">menu</i></span></com-icon>
+                <com-icon class="flex-order-2 default" id="search"><span><i class="icons">search</i></span></com-icon>
+                <com-icon class="flex-order-3 default" id="shopping_cart"><span><i class="icons">shopping_cart</i></span></com-icon>
             </header>
 
             <!--
@@ -53,10 +53,14 @@
             <!-- Input: -->
 
             <!--
-            <ul is="com-list" size="xsmall" delimiter>
-                <li icon="a" ricon="a">Text</li>
-                <li icon="b" ricon="a">Text</li>
-                <li icon="c" >Text</li>
+            wie zeigen ob circle oder square?
+            -->
+            <!--
+            <ul is="com-list" size="xsmall" id="foo" delimiter>
+                <li icon="b">Text</li>
+                <li licon="b" ricon="cirlce|b">Text</li>
+                <li icon="c">Text</li>
+                <li icon="circle|c">Text</li>
             </ul>
             -->
             <!--
@@ -64,24 +68,50 @@
             @info: mögliche visuelle tags -> icon, avatar, src
             -->
             <!-- output: -->
-            <ul is="com-list" size="xsmall" delimiter>
-                <li icon="star">
-                    <com-icon icon="star"><span><i class="icons">star</i></span></com-icon>
+            <ul is="com-list" class="xsmall" delimiter>
+                <li>
+                    <com-icon class="licon default" icon="star"><span><i class="icons">star</i></span></com-icon>
                     <div>
-                        <com-text><div>Document1</div></com-text>
-                        <com-icon name="navigate_next"><span><i class="icons">navigate_next</i></span></com-icon>
+                        <com-text>Document1</com-text>
+                        <com-icon class="ricon default" name="navigate_next"><span><i class="icons">navigate_next</i></span></com-icon>
                     </div>
                 </li>
-                <li icon="star">
-                    <com-icon icon="star"><span><i class="icons">star</i></span></com-icon>
+                <li>
+                    <com-icon class="licon default" icon="star"><span><i class="icons">star</i></span></com-icon>
                     <div>
-                        <com-text><div>Document1</div></com-text>
+                        <com-text>Document1</com-text>
                     </div>
                 </li>
-                <li icon="star">
-                    <com-icon icon="star"><span><i class="icons">star</i></span></com-icon>
+                <li>
+                    <com-icon class="licon default" icon="star"><span><i class="icons">star</i></span></com-icon>
                     <div>
-                        <com-text><div>Document1</div></com-text>
+                        <com-text>Document1</com-text>
+                    </div>
+                </li>
+            </ul>
+
+            <com-subheader>
+                Owners
+            </com-subheader>
+
+            <ul is="com-list" class="xsmall" delimiter>
+                <li>
+                    <com-icon class="licon circle" icon="star"><span><i class="icons">star</i></span></com-icon>
+                    <div>
+                        <com-text>Document1</com-text>
+                        <com-icon class="ricon circle" name="navigate_next"><span><i class="icons">navigate_next</i></span></com-icon>
+                    </div>
+                </li>
+                <li>
+                    <com-icon class="licon circle" icon="star"><span><i class="icons">star</i></span></com-icon>
+                    <div>
+                        <com-text>Document1</com-text>
+                    </div>
+                </li>
+                <li>
+                    <com-icon class="licon circle" icon="star"><span><i class="icons">star</i></span></com-icon>
+                    <div>
+                        <com-text>Document1</com-text>
                     </div>
                 </li>
             </ul>
@@ -97,24 +127,24 @@
                 <li icon="c" ricon="a">Text</li>
             </ul>
              -->
-            <ul is="com-list" size="small" delimiter>
-                <li icon="star">
-                    <com-icon circle name="star"><span><i class="icons">star</i></span></com-icon>
+            <ul is="com-list" class="small" delimiter>
+                <li>
+                    <com-icon class="licon default" icon="star"><span><i class="icons">star</i></span></com-icon>
                     <div>
-                        <com-text><div>Document1</div></com-text>
-                        <com-icon circle name=">navigate_next"><span><i class="icons">navigate_next</i></span></com-icon>
+                        <com-text>Document1</com-text>
+                        <com-icon class="ricon default" name="navigate_next"><span><i class="icons">navigate_next</i></span></com-icon>
                     </div>
                 </li>
-                <li icon="star">
-                    <com-icon circle name="star"><span><i class="icons">star</i></span></com-icon>
+                <li>
+                    <com-icon class="licon default" icon="star"><span><i class="icons">star</i></span></com-icon>
                     <div>
-                        <com-text><div>Document1</div></com-text>
+                        <com-text>Document1</com-text>
                     </div>
                 </li>
-                <li icon="star">
-                    <com-icon circle name="star"><span><i class="icons">star</i></span></com-icon>
+                <li>
+                    <com-icon class="licon default" icon="star"><span><i class="icons">star</i></span></com-icon>
                     <div>
-                        <com-text><div>Document1</div></com-text>
+                        <com-text>Document1</com-text>
                     </div>
                 </li>
             </ul>
@@ -122,6 +152,50 @@
             <com-subheader>
                 Notes
             </com-subheader>
+
+            <ul is="com-list" class="small" delimiter>
+                <li>
+                    <com-icon class="licon circle" icon="star"><span><i class="icons">star</i></span></com-icon>
+                    <div>
+                        <com-text>Document1</com-text>
+                        <com-icon class="ricon circle" name="navigate_next"><span><i class="icons">navigate_next</i></span></com-icon>
+                    </div>
+                </li>
+                <li>
+                    <com-icon class="licon circle" icon="star"><span><i class="icons">star</i></span></com-icon>
+                    <div>
+                        <com-text>Document1</com-text>
+                    </div>
+                </li>
+                <li>
+                    <com-icon class="licon circle" icon="star"><span><i class="icons">star</i></span></com-icon>
+                    <div>
+                        <com-text>Document1</com-text>
+                    </div>
+                </li>
+            </ul>
+
+            <com-subheader>
+                Notes
+            </com-subheader>
+
+            <ul is="com-list" class="small" delimiter>
+                <li>
+                    <div>
+                        <com-text>Document1</com-text>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <com-text>Document1</com-text>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <com-text>Document1</com-text>
+                    </div>
+                </li>
+            </ul>
 
             <p>
                 Lorum Ipsum yapsim. Kisum lorum. La ma.
