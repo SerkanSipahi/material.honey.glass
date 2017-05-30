@@ -201,7 +201,7 @@ com-icon.circle {
 /**************/
 /** com-List **/
 /**************/
-ul[is="com-list"] {
+ul {
 
     li, li > div {
         display: flex;
