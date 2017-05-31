@@ -183,7 +183,7 @@ com-icon > span {
 /*********************************************************/
 /** com-icon - default dimensions (height, width) in ul **/
 /*********************************************************/
-com-icon.default > span {
+com-icon > span {
     width: var(--icon-live);
     height: var(--icon-live);
 }
@@ -250,10 +250,10 @@ ul {
     /********************/
     /*** default icon ***/
     /********************/
-    com-icon.default.licon {
+    com-icon.licon {
         margin-left: var(--ext-buffer);
     }
-    com-icon.default.ricon {
+    com-icon.ricon {
         margin-right: var(--ext-buffer);
     }
 
