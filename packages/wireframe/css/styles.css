@@ -223,9 +223,16 @@ ul {
         com-icon.circle.licon + div {
             margin-left: var(--key-line);
         }
-        > div {
+        // with left icon
+        > com-icon + div {
             flex: 1 1 auto;
             margin-left: calc(var(--key-line) + var(--key-line) - var(--ext-buffer));
+            border-bottom: 1px solid var(--border-color);
+        }
+        // no left icon
+        > div {
+            flex: 1 1 auto;
+            margin-left: var(--key-line);
             border-bottom: 1px solid var(--border-color);
         }
         &:last-child > div {
