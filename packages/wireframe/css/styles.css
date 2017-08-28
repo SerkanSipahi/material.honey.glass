@@ -166,7 +166,7 @@ com-subheader {
     align-items: center;
     height: var(--height-48px);
     background-color: var(--color-48px);
-    padding-left: calc(var(--key-line) + 4px);
+    padding-left: calc(var(--key-line));
 }
 
 /**************/
