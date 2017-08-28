@@ -147,8 +147,8 @@ header {
     }
     com-icon:nth-of-type(1){
         /* keylines */
-        /* 48px(icon)+24px = 72px(key-line); */
-        margin-right: 20px;
+        /* 4px + 40px(icon)+24px = 72px(key-line); */
+        margin-right: 28px;
         /* extra buffer */
         margin-left: var(--ext-buffer);;
     }
@@ -184,8 +184,8 @@ com-icon > span {
 /** com-icon - default dimensions (height, width) in ul **/
 /*********************************************************/
 com-icon > span {
-    width: var(--icon-live);
-    height: var(--icon-live);
+    width: var(--icon-area);
+    height: var(--icon-area);
 }
 
 /********************************************************/
@@ -219,7 +219,7 @@ ul {
         }
         > div {
             flex: 1 1 auto;
-            margin-left: calc(var(--key-line) + var(--ext-buffer));
+            margin-left: calc(var(--key-line) + var(--key-line) - var(--ext-buffer));
             border-bottom: 1px solid var(--border-color);
         }
         &:last-child > div {
