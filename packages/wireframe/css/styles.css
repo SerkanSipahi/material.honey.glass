@@ -137,6 +137,12 @@ com-app {
 /** header **/
 /************/
 header {
+
+    &.fixed {
+        position: sticky;
+        top:0;
+    }
+
     display: flex;
     align-items: center;
     height: var(--height-56px);
